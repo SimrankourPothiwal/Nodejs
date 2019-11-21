@@ -1,0 +1,330 @@
+service: catalog
+
+package:
+  exclude:
+    - test/**
+    
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+plugins:
+  - serverless-offline
+  - serverless-step-functions
+  - serverless-plugin-existing-s3
+
+custom:
+  serverless-offline:
+    apiKey: rsmgKKBFyl7r44tP5GVM75O6ZHrolrVU8bcleZT5
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-west-2
+  endpointType: REGIONAL
+  deploymentBucket: ${file(./config/config.${opt:stage, self:provider.stage}.json):S3_API_DEPLOYMENT_BUCKET}
+  memorySize: 1024
+  timeout: 30
+  versionFunctions: false
+
+  apiGateway:
+   minimumCompressionSize: 1024
+  role: ${file(./config/config.${opt:stage, self:provider.stage}.json):LAMBDA_EXEC_ROLE}
+  environment:
+    REGION: ${opt:region, self:provider.region}
+    DEPLOYMENT_STAGE: ${opt:stage, self:provider.stage}
+    DB_CONNECTION_STRING: ${${file(./config/config.${opt:stage, self:provider.stage}.json):DB_CONNECTION_STRING}}
+    LAMBDA: catalog-${opt:stage, self:provider.stage}
+    POST_NEW_RELIC: ${file(./config/config.${opt:stage, self:provider.stage}.json):POST_NEW_RELIC}
+    CLOUDFRONT_URL: ${file(./config/config.${opt:stage, self:provider.stage}.json):CLOUDFRONT_URL}
+    S3_IMAGE_BUCKET_NAME: ${file(./config/config.${opt:stage, self:provider.stage}.json):S3_IMAGE_BUCKET_NAME}
+    S3_IMAGE_BASE_PATH: ${file(./config/config.${opt:stage, self:provider.stage}.json):S3_IMAGE_BASE_PATH}
+    SPECIALS_UPDATE: content-service-${opt:stage, self:provider.stage}-update-home-page-content
+    CATALOG_STATE_MACHINE: ${file(./config/config.${opt:stage, self:provider.stage}.json):CATALOG_STATE_MACHINE}
+    REFRESH_STORE_PRODUCTS: ${file(./config/config.${opt:stage, self:provider.stage}.json):REFRESH_STORE_PRODUCTS}
+    UPDATE_EQUIPMENT_TYPES: setupService-${opt:stage, self:provider.stage}-updateNewEquipmentOrTypes
+    PERSONAL_RECO_API: ${file(./config/config.${opt:stage, self:provider.stage}.json):PERSONAL_RECO_API}
+    PERSONAL_RECO_CLIENT_ID: ${file(./config/config.${opt:stage, self:provider.stage}.json):PERSONAL_RECO_CLIENT_ID}
+    PERSONAL_RECO_CLIENT_SECRET: ${file(./config/config.${opt:stage, self:provider.stage}.json):PERSONAL_RECO_CLIENT_SECRET}
+    PERSONAL_RECO_COUNT: ${file(./config/config.${opt:stage, self:provider.stage}.json):PERSONAL_RECO_COUNT}
+    LOG_LEVEL: TRACE
+    RECORD_LIMIT: "50"
+    EQUIPMENT_ENABLED: OFF
+    F_SEARCH_FLAG: ${file(./config/config.${opt:stage, self:provider.stage}.json):F_SEARCH_FLAG}
+    CATALOG_STATE_MACHINE_INSTANCES : "15"
+    EMAIL_DISTLIST: "bandla.pakeeraiah@7-11.com, Srinivas.Yalamanchili@7-11.com"
+    SEARCH_REINDEX_URL: ${file(./config/config.${opt:stage, self:provider.stage}.json):SEARCH_REINDEX_URL}
+    F_SEARCH_VOICE_FLAG: ${file(./config/config.${opt:stage, self:provider.stage}.json):F_SEARCH_VOICE_FLAG}
+
+  vpc:
+    securityGroupIds:
+      - ${file(./config/config.${opt:stage, self:provider.stage}.json):VPC_SG_ID}
+    subnetIds:
+      - ${file(./config/config.${opt:stage, self:provider.stage}.json):VPC_SUBNET_1}
+      - ${file(./config/config.${opt:stage, self:provider.stage}.json):VPC_SUBNET_2}
+
+functions:
+    createOrUpdate:
+        handler: catalog/handlers/create.createOrUpdate
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: /{entity}
+                method: post
+                cors: true
+                private: true
+            - http:
+                path: /{entity}/{id}
+                method: post
+                cors: true
+                private: true
+
+    getCatalog:
+        handler: catalog/handlers/get.catalog
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: /{entity}
+                method: get
+                cors: true
+                private: true
+            - http:
+                path: /{entity}/{id}
+                method: get
+                cors: true
+                private: true
+            - http:
+                path: /{entity}/{id}/{tags}
+                method: get
+                cors: true
+                private: true
+
+    getProductTags:
+        handler: catalog/handlers/get.productTags
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: digital/v1/tags
+                method: post
+                cors: true
+                private: true
+
+    findCategories:
+        handler: catalog/handlers/search.findCategories
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: digital/v1/find/categories
+                method: post
+                cors: true
+                private: true
+
+    createProduct:
+        handler: catalog/handlers/create.createOrUpdate
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: products
+                method: post
+                cors: true
+                private: true
+
+    getProductDetails:
+        handler: catalog/handlers/get.productDetails
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: products/{id}
+                method: get
+                cors: true
+                private: true
+
+    findProducts:
+        handler: catalog/handlers/search.findProducts
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: find/products
+                method: post
+                cors: true
+                private: true
+
+    searchProducts:
+        handler: catalog/handlers/search.searchProducts
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: search/products
+                method: post
+                cors: true
+                private: true
+
+    getETAForProducts:
+        handler: catalog/handlers/get.getETAForProducts
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: products/eta
+                method: post
+                cors: true
+                private: true
+
+    removeTags:
+        handler: catalog/handlers/tags.removeTags
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+
+    updateImageUrls:
+        handler: catalog/handlers/update.updateImageUrls
+        timeout: 120
+    
+    updateCategoryImageUrls:
+        handler: catalog/handlers/update.updateCategoryImageUrls
+        timeout: 120
+
+    updateProductFromXls:
+        handler: catalog/handlers/update.updateProductFromXls
+        timeout: 900
+        memorySize: 2048
+        events:
+            - existingS3:
+                bucket: phx-delivery-app-assets-dev
+                events:
+                    - s3:ObjectCreated:*
+                rules:
+                    - prefix: upload/products/${opt:stage, self:provider.stage}/
+                    - suffix: .xlsx
+
+    updateProductCombosFromXls:
+        handler: catalog/handlers/update.updateProductCombosFromXls
+        timeout: 900
+        memorySize: 2048
+        events:
+            - existingS3:
+                bucket: phx-dev-combo
+                events:
+                    - s3:ObjectCreated:*
+                rules:
+                    - prefix: upload/combo/${opt:stage, self:provider.stage}/
+                    - suffix: .xlsx
+
+    applyPromo2:
+        handler: promo/handlers/process.applyPromo2
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: search/promo/
+                method: post
+                cors: true
+                private: true
+
+    updateSpecials:
+        handler: catalog/handlers/update.updateSpecials
+        timeout: 900
+        memorySize: 2048
+
+    #able to create or edit new promo through admin tool
+    createOrUpdatePromo:
+        handler: promo/handlers/update.createOrUpdatePromo
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: create/promo
+                method: post
+                cors: true
+                private: true
+            - http:
+                path: create/promo/sample/request
+                method: post
+                cors: true
+                private: true
+            - http:
+                path: create/promo/sample/result
+                method: post
+                cors: true
+                private: true
+
+    promoUsage:
+        handler: promo/handlers/update.promoUsage
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: update/promo/change_count
+                method: post
+                cors: true
+                private: true
+
+    promoUpgrade:
+        handler: promo/handlers/upgrade.upgrade
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: promo/promoUpgrade
+                method: post
+                cors: true
+                private: true
+
+    manageProductUpdates:
+        handler: catalog/handlers/manage.catalogUpdateStateMachine
+        timeout: 900
+        memorySize: 2048
+    
+    promoDetails:
+        handler: promo/handlers/update.updatePromosFromPromoEngine
+        onError: ${file(./config/config.${opt:stage, self:provider.stage}.json):DLQ_SNS}
+        events:
+            - http:
+                path: webhook/promo-engine
+                method: post
+                cors: true
+                private: true
+
+# Catalog, Rules update Batch Operations
+stepFunctions:
+  stateMachines:
+    CatalogManagement-${opt:stage, self:provider.stage}:
+      name: CatalogManagement-${opt:stage, self:provider.stage}
+      definition:
+        Comment: "Catalog update management state machine"
+        StartAt: FetchPendingProduct
+        States:
+
+            # Fetch a single product from the pending queue         
+            FetchPendingProduct:
+                Type: Task
+                Resource: ${file(./config/config.${opt:stage, self:provider.stage}.json):MANAGE_CATALOG_UPDATES}
+                Next: CheckPendingProduct
+
+            # End if next step is END which happens when there are no more products in pending state
+            CheckPendingProduct:
+                Type: Choice
+                Default: EndStep
+                Choices: 
+                  - Variable: $.NextTask
+                    StringEquals: SyncImages
+                    Next: SyncImages
+
+            #  sync Images between S3 bucket and product images
+            SyncImages:
+                Type: Task
+                Resource: ${file(./config/config.${opt:stage, self:provider.stage}.json):MANAGE_CATALOG_UPDATES}
+                Next: ProcessStoreProducts
+                Retry:
+                - ErrorEquals:
+                  - States.Timeout
+                  IntervalSeconds: 2
+                  MaxAttempts: 2
+                  BackoffRate: 1.5
+            # Update one product at a time across all stores
+            ProcessStoreProducts:
+                Type: Task
+                Resource: ${file(./config/config.${opt:stage, self:provider.stage}.json):MANAGE_CATALOG_UPDATES}
+                Next: FetchPendingProduct
+                Retry:
+                - ErrorEquals:
+                  - States.Timeout
+                  IntervalSeconds: 2
+                  MaxAttempts: 2
+                  BackoffRate: 1.5
+
+            EndStep:
+              Type: Pass
+              End: true

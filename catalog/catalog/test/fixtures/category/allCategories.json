@@ -1,0 +1,126 @@
+{
+    "Items": [
+        {
+            "_id": "595115305eb917b4766106fe",
+            "id": "48393",
+            "__v": 0,
+            "name": "Bakery",
+            "desc": "Bakery",
+            "long_desc": "Bakery",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/bakery_thumb.png",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "bakery",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/bakery_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Bakery.jpg",
+            "departments": [
+                "171706",
+                "171707"
+            ],
+            "tags": [
+                "Bakery"
+            ]
+        },
+        {
+            "_id": "595115305eb917b476610700",
+            "id": "48394",
+            "__v": 0,
+            "name": "Meals",
+            "desc": "Meals",
+            "long_desc": "Meals",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/meals_thumb.png",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "snacks",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/meals_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Meals.jpg",
+            "departments": [],
+            "tags": [
+                "Pizza",
+                "Hot",
+                "Chicken",
+                "Sub",
+                "Sandwich",
+                "Salad",
+                "Taquito",
+                "Burger",
+                "Italian"
+            ]
+        },
+        {
+            "_id": "595115315eb917b476610702",
+            "id": "48396",
+            "__v": 0,
+            "name": "Frozen Treats",
+            "desc": "Frozen Treats",
+            "long_desc": "Frozen Treats",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Frozen_Treats.jpg",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "frozen-treats",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/frozen_treats_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Frozen_Treats.jpg",
+            "departments": [],
+            "tags": []
+        },
+        {
+            "_id": "595115315eb917b476610704",
+            "id": "48395",
+            "__v": 0,
+            "name": "Drinks",
+            "desc": "Drinks",
+            "long_desc": "Drinks",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/drinks_thumb.png",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "drinks",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/drinks_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Drinks.png",
+            "departments": [
+                "241701",
+                "131702",
+                "241704",
+                "231703"
+            ],
+            "tags": []
+        },
+        {
+            "_id": "595115315eb917b476610708",
+            "id": "48397",
+            "__v": 0,
+            "name": "Snacks",
+            "desc": "Snacks",
+            "long_desc": "Snacks",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/snacks_thumb.png",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "snacks",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/snacks_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Snacks.png",
+            "departments": [
+                "301709",
+                "571505"
+            ],
+            "tags": []
+        },
+        {
+            "_id": "595115315eb917b47661070a",
+            "id": "48398",
+            "__v": 0,
+            "name": "Candy",
+            "desc": "Candy",
+            "long_desc": "Candy",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/candy_thumb.png",
+            "is_featured": true,
+            "is_active": true,
+            "slug": "candy",
+            "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/candy_sm.png",
+            "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Candy.jpg",
+            "departments": [],
+            "tags": [
+                "Mint",
+                "Sweet"
+            ]
+        }
+    ]
+}

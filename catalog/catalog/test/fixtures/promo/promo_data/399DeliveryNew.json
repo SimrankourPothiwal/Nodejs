@@ -1,0 +1,36 @@
+{
+    "promo_id" : "5af1c1005542fc7fe3847a6c",
+    "promo_code" : "399Shipping",
+    "name" : "7NOW Flat Shipping Fee",
+    "description" : "Get your 7NOW Orders Delivered - Just $3.99! Flat",
+    "start_date" : "2018-05-10T00:00:00.000Z",
+    "end_date" : "2018-05-31T00:00:00.000Z",
+    "country" : "US",
+    "is_active" : false,
+    "priority" : 100,
+    "entitled_user" : {
+        "guest_user" : true,
+        "existing_user" : true
+    },
+    "promo_type" : "user_coupon",
+    "rules" : [ 
+        {
+            "value" : 399,
+            "value_type" : "value_override",
+            "discount_type" : "shipping"
+        }
+    ],
+    "entitled_product" : {
+        "all" : true
+    },
+    "usage_limit" : {
+        "max" : -1,
+        "used_count" : 195361
+    },
+    "entitle_order" : {
+        "min_quantity" : 1
+    },
+    "entitled_store" : {
+        "all" : true
+    }
+}

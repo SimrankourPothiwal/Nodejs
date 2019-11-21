@@ -1,0 +1,19 @@
+{
+    "store_id":"19279",
+    "delivery_flag":"D",
+    "process_flag":"C",
+    "items":[{
+            "product_id": "303160-1-0-1",
+            "quantity": 5
+        },
+        {
+            "product_id": "303173-1-0-1",
+            "quantity": 1
+        }
+  ],
+  "user_profile":
+  {
+      "is_guest":"Y"
+  },
+  "delivery_fee":900
+}

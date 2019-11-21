@@ -1,0 +1,30 @@
+{
+    "promo_id" : "d7f800e7-6a60-4a50-af3e-e470c42c49dc",
+    "promo_code" : "7FreeShipping",
+    "name" : "7NOW Free Shipping",
+    "description" : "Sign-up and Order to qualify for 7 Free Shipping. Limited time offer!",
+    "start_date" : "2018-05-01T00:00:00.000Z",
+    "end_date" : "2018-05-22T00:00:00.000Z",
+    "country" : "US",
+    "is_active" : true,
+    "priority" : 900,
+    "usage_limit" : {
+        "max_per_user" : 7
+    },
+    "available_count" : 7,
+    "entitled_user" : {
+        "guest_user" : true
+    },
+    "promo_type" : "user_coupon",
+    "rules" : [ 
+        {
+            "discount_type" : "shipping",
+            "value_type" : "value_override",
+            "value" : 0
+        }
+    ],
+    "timestamps" : {
+        "created_at" : "2018-05-01T00:00:00.000Z",
+        "updated_at" : "2018-05-02T09:00:00.000Z"
+    }
+}

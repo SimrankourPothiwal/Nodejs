@@ -1,0 +1,25 @@
+
+{
+    "DB_CONNECTION_STRING": "ssm:db_conn_uat_encr",
+    "DLQ_SNS": "arn:aws:sns:us-west-2:127566284696:Lambda_Failure_Notification",
+    "S3_API_DEPLOYMENT_BUCKET": "7now-dev-apis-deployment-packages",
+    "LAMBDA_EXEC_ROLE": "arn:aws:iam::127566284696:role/7NOW_Lambda_Exec_Role",
+    "POST_NEW_RELIC": "arn:aws:lambda:${opt:region, self:provider.region}:127566284696:function:common-${opt:stage, self:provider.stage}-postNewRelic",
+    "CLOUDFRONT_URL": "https://d21c9usmdrkboa.cloudfront.net/",
+    "CATALOG_STATE_MACHINE": "arn:aws:states:us-west-2:127566284696:stateMachine:CatalogManagement-${opt:stage, self:provider.stage}",
+    "MANAGE_CATALOG_UPDATES": "arn:aws:lambda:${opt:region, self:provider.region}:127566284696:function:catalog-${opt:stage, self:provider.stage}-manageProductUpdates",
+    "REFRESH_STORE_PRODUCTS": "arn:aws:lambda:${opt:region, self:provider.region}:127566284696:function:inventory-${opt:stage, self:provider.stage}-refreshStoreProducts",
+    "VPC_SG_ID": "sg-c0721bbe",
+    "VPC_SUBNET_1": "subnet-0621aceadde29feb5",
+    "VPC_SUBNET_2": "subnet-02347112fb592614a",
+    "S3_IMAGE_BUCKET_NAME":"phx-delivery-app-assets-dev",
+    "S3_IMAGE_BASE_PATH":"images/products/usa/${opt:stage, self:provider.stage}/",
+    "PERSONAL_RECO_API": "https://api-test.7-eleven.com",
+    "PERSONAL_RECO_CLIENT_ID": "kAU2IGSTMr6ehtBloKtVvvnmcgTgAfJT",
+    "PERSONAL_RECO_CLIENT_SECRET": "bCsVzQDs1WP4f8Vy",
+    "PERSONAL_RECO_COUNT": "100",
+    "PERSONAL_REQUEST_TIMEOUT": "500",
+    "F_SEARCH_FLAG":"ON",
+    "SEARCH_REINDEX_URL":"http://internal-search-index-qa-1821686909.us-west-2.elb.amazonaws.com/product/index-search/v2/addtoindex",
+    "F_SEARCH_VOICE_FLAG": "ON"
+}

@@ -1,0 +1,19 @@
+{
+    "_id": "595115315eb917b47661070a",
+    "id": "48398",
+    "__v": 0,
+    "name": "Candy",
+    "desc": "Candy",
+    "long_desc": "Candy",
+    "thumbnail": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/candy_thumb.png",
+    "is_featured": true,
+    "is_active": true,
+    "slug": "candy",
+    "small_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/candy_sm.png",
+    "full_image": "https://s3-us-west-2.amazonaws.com/product-catalog-assets/Candy.jpg",
+    "departments": [],
+    "tags": [
+        "Mint",
+        "Sweet"
+    ]
+}

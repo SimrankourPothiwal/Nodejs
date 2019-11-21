@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  description: "7NOW App Product Catalog APIs"
+  version: "1.0.0"
+  title: "Product Catalog API"
+  contact:
+    email: "murali.ramachari@7-11.com"
+host: "api.7-eleven.com"
+basePath: "/now/catalog"
+tags:
+- name: "Catalog"
+  description: "Everything about Products, Categories, Tags and Nutrition Info"
+- name: "Categories"
+  description: "Top level product categories"
+- name: "Products"
+  description: "Products"
+schemes:
+- "https"
+paths:
+  /categories:
+    get:
+      tags:
+      - "Categories"
+      summary: "List of product categories"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Category"
+      responses:
+        403:
+          description: "Forbidden. Please check your API Key and path"
+      security:
+      - api_key
+        - "read:Categories"
+securityDefinitions:
+  api_key:
+    type: "api_key"
+    name: "x-api-key"
+    in: "header"
+definitions:
+  Category:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        format: "string"
+      name:
+        type: "string"
+      desc:
+        type: "string"
+      long_desc:
+        type: "string"
+      thumbnail:
+        type: "string"
+      is_featured:
+        type: "boolean"
+      is_active:
+        type: "boolean"
+      slug:
+        type: "string"
+      small_image:
+        type: "string"
+      full_image:
+        type: "string"
+      tags:
+        type: "array"
+        description: "array of string tag values"

@@ -1,0 +1,224 @@
+{
+    "Copyright": "2006 Frito-Lay North America, Inc.",
+    "ecom_Brand": "Cheetos",
+    "Description": "Cheese Flavored Snacks, Crunchy",
+    "Address": "Plano, TX 75024-4099",
+    "Brand": "CHEETOS",
+    "Productweight": "3.59999990463257",
+    "Ingredients": {
+        "Ingredient": [
+            "Enriched Corn Meal (Corn Meal, Ferrous Sulfate, Niacin, Thiamin Mononitrate, Riboflavin, and Folic Acid)",
+            "Vegetable Oil (Corn, Canola, and/or Sunflower Oil)",
+            "Cheese Seasoning (Whey, Cheddar Cheese [Milk, Cheese Cultures, Salt, Enzymes], Canola Oil, Maltodextrin [Made from Corn], Salt, Whey Protein Concentrate, Monosodium Glutamate, Natural and Artificial Flavors, Lactic Acid, Citric Acid, Artificial Color [Yellow 6])",
+            "and Salt"
+        ]
+    },
+    "Extendedsize": "3.5 oz (99.2 g)",
+    "EcomPostDate": "07/01/2016",
+    "ecom_Volume": "112.5563",
+    "ecom_Upcstructure": "12",
+    "ecom_Depth": "2.25",
+    "Warnings": "Contains milk ingredients.",
+    "Upc": "00028400433181",
+    "ecom_Legacyupc": "028400433181",
+    "ecom_Height": "8.7",
+    "ecom_Width": "5.75",
+    "Hasnutrition": "true",
+    "ecom_Manufacturer": "Frito Lay",
+    "Itemsize": "3.5",
+    "Phone": "800-552-4477",
+    "Itemmeasure": "oz",
+    "Productdetails": "Made with real cheese! Guaranteed fresh until printed date or this snack's on us. Questions or comments? Weekdays 9:00 am to 4:30 pm CT. Email or chat at fritolay.com. What's a serving? With Cheetos Brand Crunchy snacks, eat 21 - that's just the right amount for crazy cheesy fun! Connect with Chester Cheetah. facebook.com/cheetos. Twitter at ChesterCheetah. Gluten free. Visit our website at fritolay.com.",
+    "Itemname": "Cheese Flavored Snacks",
+    "Manufacturer": "Frito Lay",
+    "Valuepreparedcount": "0",
+    "Assets": [
+        {
+            "AssetType": "Image",
+            "AssetSubType": "Ecom",
+            "FileFormat": "Jpg",
+            "MaxQuality": "170"
+        }
+    ],
+    "NutritionFacts": {
+        "Variant": [
+            {
+                "Upc": "00028400433181",
+                "ValuePreparedType": "0",
+                "ServingSizeText": "1",
+                "ServingSizeUOM": "oz",
+                "ServingsPerContainer": "3.5",
+                "Nutrient": [
+                    {
+                        "Name": "Calories",
+                        "Quantity": "150",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Calories from Fat",
+                        "Quantity": "90",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Total Fat",
+                        "Quantity": "10",
+                        "UOM": "g",
+                        "Percentage": "16",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Saturated Fat",
+                        "Quantity": "1.5",
+                        "UOM": "g",
+                        "Percentage": "8",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Cholesterol",
+                        "Quantity": "0",
+                        "UOM": "mg",
+                        "Percentage": "0",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Sodium",
+                        "Quantity": "250",
+                        "UOM": "mg",
+                        "Percentage": "10",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Total Carbohydrate",
+                        "Quantity": "13",
+                        "UOM": "g",
+                        "Percentage": "4",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Dietary Fiber",
+                        "Quantity": "-1",
+                        "UOM": "g",
+                        "Percentage": "2",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Sugars",
+                        "Quantity": "1",
+                        "UOM": "g",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Protein",
+                        "Quantity": "2",
+                        "UOM": "g",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Vitamin A",
+                        "Percentage": "0",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Vitamin C",
+                        "Percentage": "0",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Calcium",
+                        "Percentage": "0",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Iron",
+                        "Percentage": "2",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Niacin",
+                        "Percentage": "4",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Vitamin B6",
+                        "Percentage": "2",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Riboflavin",
+                        "Percentage": "4",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Thiamin",
+                        "Percentage": "8",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Trans Fat",
+                        "Quantity": "0",
+                        "UOM": "g",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Gluten Free",
+                        "IsOrContains": "true",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "ServingSize-InGrams",
+                        "Quantity": "28",
+                        "UOM": "g",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Milk",
+                        "Quantity": "1",
+                        "IsOrContains": "true",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "Gluten",
+                        "Quantity": "0",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    },
+                    {
+                        "Name": "MetricServingSize",
+                        "Quantity": "28",
+                        "UOM": "g",
+                        "IsOrContains": "false",
+                        "ValuePreparedType": "0"
+                    }
+                ]
+            }
+        ]
+    },
+    "Categories": {
+        "Category": [
+            {
+                "Code": "SNACKS",
+                "Name": "Snacks"
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "id": "241134",
+    "slin": "241134",
+    "suiid": "234567",
+    "size_index": "1",
+    "ipq": "1",
+    "name": "Coke 20oz",
+    "desc": "Bottled Soft Drink",
+    "long_desc": "Bottled Soft Drink",
+    "department_id": 241701,
+    "category_id": "48395",
+    "category": "Drinks",
+    "upc": "00049000400441",
+    "upcs": ["00049000400441"],
+    "thumbnail": "https://s3-us-west-2.amazonaws.com/phx-delivery-app-assets/product-images/49000400441.png",
+    "age_restricted": false,
+    "srp": 1.99,
+    "is_active": true,
+    "tags": [
+        "Soda",
+        "Cold"
+    ],
+    "images": [
+        "https://s3-us-west-2.amazonaws.com/phx-delivery-app-assets/product-images/49000400441.png",
+        "https://s3-us-west-2.amazonaws.com/phx-delivery-app-assets/product-images/49000400441.png",
+        "https://s3-us-west-2.amazonaws.com/phx-delivery-app-assets/product-images/49000400441.png"
+    ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "catalog",
+  "version": "2.0.5",
+  "description": "7NOW - Catalog API",
+  "scripts": {
+    "start": "sls offline --dontPrintOutput --prefix catalog --httpsProtocol ./cert start ",
+    "deployDev": "sls deploy -s dev --verbose --aws-profile awsDevProfile",
+    "deployQA": "sls deploy -s qa --verbose --aws-profile awsDevProfile",
+    "deployUAT": "sls deploy -s uat --verbose --aws-profile awsDevProfile",
+    "deployPROD": "sls deploy -s prod --verbose",
+    "deployDevS3Deploy": "sls s3deploy -s dev --verbose --aws-profile awsDevProfile",
+    "deployQAS3Deploy": "sls s3deploy -s qa --verbose --aws-profile awsDevProfile",
+    "deployUATS3Deploy": "sls s3deploy -s uat --verbose --aws-profile awsDevProfile",
+    "deployPRODS3Deploy": "sls s3deploy -s prod --verbose",
+    "info": "sls info -r us-west-2",
+    "test": "env DEPLOYMENT_STAGE=test mocha -w ./**/services/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.termn.us/service-apis/7now/catalog.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "async": "2.6.1",
+    "aws-es": "1.5.3",
+    "aws-sdk": "^2.378.0",
+    "bunyan": "1.8.12",
+    "joi": "13.6.0",
+    "json2csv": "^3.11.5",
+    "lodash": "^4.17.11",
+    "loglevel": "^1.6.1",
+    "moment": "^2.23.0",
+    "moment-timezone": "^0.5.23",
+    "mongoose": "5.2.5",
+    "phoenix-common": "git+https://git.termn.us/service-apis/7now/phoenix-common.git#1.4.3",
+    "request": "^2.88.0",
+    "xlsx": "^0.12.8"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mockery": "2.1.0",
+    "serverless-offline": "^3.31.3",
+    "serverless-plugin-existing-s3": "^2.3.0",
+    "serverless-step-functions": "1.6.1",
+    "sinon": "^6.1.5"
+  }
+}

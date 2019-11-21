@@ -1,0 +1,30 @@
+{
+    "promo_id" : "d6f800e7-6a60-4a50-af3e-e470c42c49dc",
+    "promo_code" : "7FreeShipping",
+    "name" : "7NOW Free Shipping",
+    "description" : "You got free shipping...! Order today!",
+    "start_date" : "2018-05-01T00:00:00.000Z",
+    "end_date" : "2018-05-22T00:00:00.000Z",
+    "country" : "US",
+    "is_active" : true,
+    "priority" : 1000,
+    "usage_limit" : {
+        "max_per_user" : 7
+    },
+    "available_count" : 7,
+    "entitled_user" : {
+        "existing_user" : true
+    },
+    "promo_type" : "user_coupon",
+    "rules" : [ 
+        {
+            "discount_type" : "shipping",
+            "value_type" : "value_override",
+            "value" : 0
+        }
+    ],
+    "timestamps" : {
+        "created_at" : "2018-05-01T00:00:00.000Z",
+        "updated_at" : "2018-05-02T09:00:00.000Z"
+    }
+}

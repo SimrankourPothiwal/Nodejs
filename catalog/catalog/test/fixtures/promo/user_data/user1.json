@@ -1,0 +1,16 @@
+{
+    "customer_id": "17b22f29-bd4f-4dc9-83ec-8fc1fb00034",
+    "promo_id": "5af1c07d5542fc9307847a6a",
+    "__v": 0,
+    "promo_code": "7FreeShipping",
+    "description": "You got free shipping...! Order today!",
+    "start_date": "2018-05-01T00:00:00.000Z",
+    "end_date": "2018-05-22T00:00:00.000Z",
+    "priority": 10,
+    "usage_limit": {
+        "max": -1,
+        "max_per_user": 7,
+        "used_count": 121411
+    },
+    "available_count": 4
+}

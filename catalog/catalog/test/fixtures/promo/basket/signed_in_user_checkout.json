@@ -1,0 +1,24 @@
+{
+    "store_id":"19279",
+    "delivery_flag":"D",
+    "process_flag":"C",
+    "items":[{
+            "product_id": "303160-1-0-1",
+            "quantity": 5
+        },
+        {
+            "product_id": "303173-1-0-1",
+            "quantity": 1
+        }
+  ],
+  "user_profile":
+  {
+      "customer_id": "0d824de8-7d5f-4439-a08e-9c3a3c2b5b44",
+      "first_name":"John",
+      "last_name":"Mckinsey",
+      "phone_number":"7895897458",
+      "email":"seven711711@7-11.com",
+      "is_guest":"N"
+  },
+  "delivery_fee":900
+}
